@@ -10,6 +10,7 @@ body {
     background-color: #000; /* Color de fondo del cuerpo */
 }
 .custom-navbar .navbar-brand img {
+    display: flex;
     max-width: 100%;  /* Hace que el logo se ajuste automáticamente */
     height: auto;     /* Mantiene la proporción */
     width: 200px;     /* Tamaño base en pantallas grandes */
@@ -53,9 +54,17 @@ body {
     background-color: black; /* Fondo negro */
     color: white; /* Texto blanco */
     border: 2px solid white; /* Borde blanco */
-    border-radius: 5px; /* Bordes ligeramente redondeados */
+    border-radius: 20px; /* Bordes ligeramente redondeados */
 }
 .form-control:focus {
     border-color: #FFD700; /* Cambia el borde a dorado al hacer clic */
     box-shadow: 0 0 5px #FFD700; /* Efecto de brillo dorado */
+}
+
+.custom-green-border{
+    border-color:#62ED2E;
+}
+
+.green-icon{
+    color:#62ED2E;
 }
