@@ -1,5 +1,7 @@
 .custom-navbar {
-    background-color: #000000 !important; /* Cambia el color a tu preferencia */
+    background-color: #000000 !important;
+    padding-left: 5px;
+    padding-right: 5px; /* Cambia el color a tu preferencia */
 }
 .navbar-border {
     height: 1px; /* Grosor de la línea */
@@ -7,10 +9,61 @@
     width: 100%;
 }
 body {
-    background-color: #000; /* Color de fondo del cuerpo */
+    background-image: url('background.png'); /* Ruta de la imagen */
+    background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
+    background-position: center; /* Centra la imagen en la pantalla */
+    background-repeat: no-repeat; /* No repite la imagen */
+    margin: 0; /* Elimina márgenes del body */
+    height: 100vh; /* Asegura que el cuerpo ocupe toda la altura de la pantalla */
+    position: relative; /* Necesario para posicionar el pseudo-elemento */
+  }
+.logo {
+    margin-right: 20px; /* Ajusta este valor para mover el logo más a la derecha */
 }
-.custom-navbar .navbar-brand img {
+
+.search-container {
+    flex-grow: 1; /* Hace que el buscador ocupe el espacio disponible */
     display: flex;
+    justify-content: center; /* Centra el buscador en su contenedor */
+}
+
+.search-box {
+    width: 50%; /* Ajusta el ancho del buscador según sea necesario */
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px; /* Espacio entre los elementos del menú */
+}
+
+body::after {
+    content: ''; /* Crea el pseudo-elemento */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Ajusta para cubrir toda la pantalla */
+    background: linear-gradient(to top, black 0%, black 20%, transparent 100%);  /* Gradiente de negro a transparente */
+    pointer-events: none; /* Evita que este pseudo-elemento bloquee interacciones como clics */
+    z-index: -1;
+    margin: 0;
+    padding: 0;
+  }
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+
+    position: fixed; /* Fija la barra en la parte superior */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: black; /* Mantiene el color negro */
+    justify-content: space-between;
+    border-bottom: 2px solid limegreen; /* Borde verde para destacar */
+    z-index: 1000; /* Asegura que siempre esté sobre otros elementos */
+  }
+.custom-navbar .navbar-brand img {
     max-width: 100%;  /* Hace que el logo se ajuste automáticamente */
     height: auto;     /* Mantiene la proporción */
     width: 200px;     /* Tamaño base en pantallas grandes */
@@ -33,7 +86,7 @@ body {
     color: #333; /* Cambia el color del texto */
 }
 .form-control {
-    width: 250px;  /* Tamaño normal */
+    width: 400px;  /* Tamaño normal */
     height: 40px;
 }
 
@@ -53,18 +106,138 @@ body {
 .form-control {
     background-color: black; /* Fondo negro */
     color: white; /* Texto blanco */
-    border: 2px solid white; /* Borde blanco */
+    border: 2px solid #62ED2E; /* Borde blanco */
     border-radius: 20px; /* Bordes ligeramente redondeados */
 }
 .form-control:focus {
-    border-color: #FFD700; /* Cambia el borde a dorado al hacer clic */
-    box-shadow: 0 0 5px #FFD700; /* Efecto de brillo dorado */
+    border-color: #62ED2E; /* Cambia el borde a dorado al hacer clic */
+    background-color: rgb(79, 79, 79);
+    
+}
+.botton {
+    height: 40px;
+    width: 120px;
+    color: #000000; /* Texto en blanco */
+    border: 2px solid #62ED2E; /* Borde verde */
+    border-radius: 20px; /* Bordes redondeados */
+    background-color: #62ED2E; /* Fondo transparente */ /* Texto en negrita */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    font-size: 30px;
+    display: flex;
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    text-align: center;
 }
 
-.custom-green-border{
-    border-color:#62ED2E;
+.fonts{
+    font-family: '../Font/TROUBLE_FONT.TTF';
 }
 
-.green-icon{
-    color:#62ED2E;
+.tamaño{
+    font-size: 30px;
+    color: #ffffff;
+    transition: color 0.3s ease; /* Transición suave al cambiar el color */
+
+}
+
+.tamaño:hover {
+    color: #ffffff; /* Color cuando el mouse pasa por encima */
+    text-decoration: underline #62ED2E;
+    
+}
+.tamaño:focus{
+    color: #ffffff !important; /* Color cuando el mouse pasa por encima */
+    text-decoration: underline #62ED2E;
+}
+.nav-item{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.navbar-nav{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.contenedor {
+    display: flex;
+    align-items: center; /* Centra verticalmente */
+    justify-content: flex-start; /* Mantiene la imagen más a la izquierda */
+    height: 80vh; /* Ajusta según el tamaño del contenedor */
+    padding-left: 20%; /* Ajusta el margen izquierdo */
+}
+
+.content {
+    margin-top: 80px; /* Ajusta este valor según la altura de tu barra de navegación */
+    padding: 20px;
+}
+
+.slider-container {
+    position: relative;
+    max-width: 600px; /* Ancho del slider */
+    margin: auto;
+    overflow: hidden;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slider img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.desingtext{
+    font-size: 80px;
+    font-family: 'TROUBLE FONT';
+    color:#ffffff
+}
+
+.texto {
+    line-height: 80px; /* Interlineado fijo */
+}
+
+
+.desingtext2{
+    font-size: 50px;
+    font-family: 'TROUBLE FONT';
+    color:#b1b1b1
+}
+
+.contenedor_texto{
+    width: 70%;
+}
+
+.contenedor_boton{
+    display: flex;
+    align-items: center; /* Centra verticalmente */
+    justify-content: flex; /* Mantiene la imagen más a la izquierda */
+    height: 100vh; /* Ajusta según el tamaño del contenedor */
+    
+}
+
+.boton_joy{
+    height: 40px;
+    width: 120px;
+    color: #000000; /* Texto en blanco */
+    border: 2px solid #62ED2E; /* Borde verde */
+    border-radius: 20px; /* Bordes redondeados */
+    background-color: #62ED2E; /* Fondo transparente */ /* Texto en negrita */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    font-size: 30px;
+    display: flex;
+    font-family: "TROUBLE FONT";
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    text-align: center;
+}
+
+.contenedor1{
+    width: 100;
+    height: 200px;
+    background-color: rgb(0, 0, 0);
 }
