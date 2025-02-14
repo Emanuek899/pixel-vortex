@@ -1,7 +1,24 @@
+@font-face {
+    font-family: "TROUBLE_FONT";
+    /* font-weight: normal;
+    font-style: normal; */
+    src: url("/static/polls/fonts/TROUBLE_FONT.TTF") format("truetype");
+}
+
+html {
+    font-size: 5px;
+}
+
+a {
+    text-decoration: none;
+}
+
 .custom-navbar {
     background-color: #000000 !important;
     padding-left: 5px;
     padding-right: 5px; /* Cambia el color a tu preferencia */
+    height: 95px;
+    width: 100%;
 }
 .navbar-border {
     height: 1px; /* Grosor de la línea */
@@ -9,7 +26,7 @@
     width: 100%;
 }
 body {
-    background-image: url('background.png'); /* Ruta de la imagen */
+    /* background-image: url(../images/background.png); Ruta de la imagen */
     background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
     background-position: center; /* Centra la imagen en la pantalla */
     background-repeat: no-repeat; /* No repite la imagen */
@@ -18,7 +35,8 @@ body {
     position: relative; /* Necesario para posicionar el pseudo-elemento */
   }
 .logo {
-    margin-right: 20px; /* Ajusta este valor para mover el logo más a la derecha */
+    margin-right: 20px;
+     /* Ajusta este valor para mover el logo más a la derecha */
 }
 
 .search-container {
@@ -130,11 +148,11 @@ body::after {
 }
 
 .fonts{
-    font-family: '../Font/TROUBLE_FONT.TTF';
+    font-family: 'TROUBLE_FONT';
 }
 
 .tamaño{
-    font-size: 30px;
+    font-size: 5rem;
     color: #ffffff;
     transition: color 0.3s ease; /* Transición suave al cambiar el color */
 
@@ -193,7 +211,7 @@ body::after {
 
 .desingtext{
     font-size: 80px;
-    font-family: 'TROUBLE FONT';
+    font-family: 'TROUBLE_FONT';
     color:#ffffff
 }
 
@@ -204,8 +222,18 @@ body::after {
 
 .desingtext2{
     font-size: 50px;
-    font-family: 'TROUBLE FONT';
+    font-family: 'TROUBLE_FONT';
     color:#b1b1b1
+}
+
+.contenedor {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .contenedor_texto{
@@ -230,7 +258,7 @@ body::after {
     cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
     font-size: 30px;
     display: flex;
-    font-family: "TROUBLE FONT";
+    font-family: "TROUBLE_FONT";
     align-items: center; /* Centra verticalmente */
     justify-content: center; /* Centra horizontalmente */
     text-align: center;
@@ -240,4 +268,9 @@ body::after {
     width: 100;
     height: 200px;
     background-color: rgb(0, 0, 0);
+}
+
+/* cosas de la navbar */
+.navbar_container {
+
 }
