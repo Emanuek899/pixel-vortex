@@ -270,3 +270,49 @@ body::after {
 .navbar_container {
 
 }
+
+/* Carrusel */
+.carousel-item img {
+    height: 500px;
+    object-fit: cover;
+
+}
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    border-radius: 15px;
+    bottom: 20px;
+    width: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    text-align: left;
+}
+.carousel-caption img {
+    width: 500px; /* Imagen más grande */
+    height: auto;
+    border-radius: 10px;
+    margin-right: 20px;
+    
+}
+.caption-text {
+    flex: 1;
+}
+.carousel-caption h2 {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+.btn {
+    background: limegreen;
+    color: black;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    display: inline-block;
+    margin-top: 10px;
+}
+    
