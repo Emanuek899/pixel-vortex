@@ -44,31 +44,33 @@
 							<a class="nav-link fonts tamaño" href="#">ABOUT US</a>
 						</li>
 					</ul>
-					<button class="btn btn-outline-success botton fonts" type="submit">LOG IN</button>
+					<button class=" btn-outline-success botton fonts" type="submit">LOG IN</button>
 				</div>
     		</div>
 		</nav>
 	</div>
-
-
     <div class="navbar-border"></div>
-		<div class="contenedor">
-			<div class="contenedor_imagen">
-				<img src="{% static 'polls/images/alien_sentado_logo.svg' %}" alt="Logo" width="170px" height="222px" class="d-inline-block align-text-top">
-		</div>
-		<br>
-		<div class="contenedor_texto">
-			<p class="desingtext texto">THE BEST DIGITAL GAMES WITH JUST ONE CLICK.</p>
-			<p class="desingtext2">DISCOVER EXCLUSIVE OFFERS, PLAY INSTANTLY</p>
-		</div>
-		{% comment %} <div class="contenedor1">
-			<button class="boton_joy" type="submit">JOIN</button>  
-		</div> {% endcomment %}
-	</div>
 
-	<div class="contenedor1">
-		<button class="boton_joy" type="submit">JOIN</button> 
-	</div>
+    <div class="hero-container">
+        <div class="hero-back">
+            <img class="hero-image" src="{% static 'polls/images/bitmap.png' %}">
+        </div>
+        <div class="hero-content-container">
+            <div class="hero-content">
+                <div>
+                    <img id="hero-logo" src="{% static 'polls/images/alien_sentado_logo.svg' %}" alt="Logo" width="170px" height="222px" class="d-inline-block align-text-top">
+                </div>
+                <br>
+                <div class="contenedor_texto">
+                    <p class="desingtext" id="hero-title">THE BEST DIGITAL GAMES WITH JUST ONE CLICK.</p>
+                    <p class="desingtext2" id="hero-subtitle">DISCOVER EXCLUSIVE OFFERS, PLAY INSTANTLY</p>
+                </div>
+            </div>
+            <div class="contenedor1">
+                <button class="boton_joy" type="submit">JOIN</button>  
+            </div>
+        </div>
+    </div>
 
 	<h1>LATEST</h1>
 
