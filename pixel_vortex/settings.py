@@ -55,7 +55,7 @@ ROOT_URLCONF = "pixel_vortex.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": ["polls.template.polls"],
+        "DIRS": ["polls/templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [

@@ -1,77 +1,77 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pixel Bortex</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'polls/css/Navbar.css' %}">
-  </head>
+{% extends "polls/master.html" %}
+{% load static %}
+{% block title %}Home{% endblock title %}
 
+{% block content %}
+<section>
+  <div class="hero-container">
+    <div class="hero-back">
+        <img class="hero-image" src="{% static 'polls/images/bitmap.webp' %}">
+    </div>
+    <div class="hero-content-container">
+        <div class="hero-content">
+            <div>
+                <img id="hero-logo" src="{% static 'polls/images/alien_sentado_logo.svg' %}" alt="Logo" width="170px" height="222px" class="d-inline-block align-text-top">
+            </div>
+            <br>
+            <div class="contenedor_texto">
+                <p class="desingtext" id="hero-title">THE BEST DIGITAL GAMES WITH JUST ONE CLICK.</p>
+                <p class="desingtext2" id="hero-subtitle">DISCOVER EXCLUSIVE OFFERS, PLAY INSTANTLY</p>
+            </div>
+        </div>
+        <div class="contenedor1">
+            <button class="boton_joy" type="submit">JOIN</button>  
+        </div>
+    </div>
+</div>
+</section>
 
-<body>
-	<div class="navbar_container">
-		<nav class="navbar navbar-expand-lg custom-navbar">
-			<div class="container-fluid logo"> <!-- Cambia 'container' por 'container-fluid' para que use todo el ancho -->
-        		<a class="navbar-brand ms-0" href="#"> <!-- Elimina márgenes a la izquierda -->
-            		<img src="{% static 'polls/images/pixel_vortex_logo.png' %}" alt="Logo" width="340px" height="100px" class="d-inline-block align-text-top logo">
-        		</a>
-        		<!-- barra de busqueda -->
-				<form class="d-flex flex-column flex-sm-row search-container">
-					<input class="form-control mb-2 mb-sm-0 me-sm-2 fonts search-box" type="search" placeholder="What are you looking for?" aria-label="Search">
-				</form>
+{% endblock content  %}
 
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
+	<h1>LATEST</h1>
 
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-						<li class="nav-item">
-							<a class="nav-link active fonts tamaño palabraborder" aria-current="page" href="#">CATALOGUE</a>
-						</li>
-
-						<li class="nav-item">
-							<a class="nav-link fonts tamaño" href="#">COMMUNITY</a>
-						</li>
-						
-						<li class="nav-item">
-						<a class="nav-link fonts tamaño" href="#">CONTACT</a>
-						</li>
-
-						<li class="nav-item">
-							<a class="nav-link fonts tamaño" href="#">ABOUT US</a>
-						</li>
-					</ul>
-					<button class="btn btn-outline-success botton fonts" type="submit">LOG IN</button>
-				</div>
-    		</div>
-		</nav>
-	</div>
-
-
-  <div class="navbar-border"></div>
-
-		<div class="contenedor">
-			<div class="contenedor_imagen">
-				<img src="{% static 'polls/images/alien_sentado_logo.svg' %}" alt="Logo" width="170px" height="222px" class="d-inline-block align-text-top">
-		</div>
-		<br>
-		<div class="contenedor_texto">
-			<p class="desingtext texto">THE BEST DIGITAL GAMES WITH JUST ONE CLICK.</p>
-			<p class="desingtext2">DISCOVER EXCLUSIVE OFFERS, PLAY INSTANTLY</p>
-		</div>
-		<div class="contenedor1">
-      <a href="{% url 'login' %}">
-			  <button class="boton_joy" type="submit" >JOIN</button>  
-      </a>
-		</div> 
-	</div>
-
-	<div class="contenedor1">
-		<button class="boton_joy" type="submit">JOIN</button> 
-	</div>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-</body>
-</html>
+    <div id="gameCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://via.placeholder.com/800x500" class="d-block w-100" alt="Juego 1">
+                <div class="carousel-caption">
+                    <img src="images/BO6_MP_Derelict_001_BRANDED.webp" alt="Miniatura">
+                    <div class="caption-text">
+                        <h2>CALL OF DUTY BLACK OPS 6</h2>
+                        <p>La pinche Descripción del jodido juego.</p>
+                        <a href="#" class="btn">SEE MORE</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://via.placeholder.com/800x500" class="d-block w-100" alt="Juego 2">
+                <div class="carousel-caption">
+                    <img src="images/R (1).jpg" alt="Miniatura">
+                    <div class="caption-text">
+                        <h2>CYBERPUNK 2077</h2>
+                        <p>La pinche Descripción del jodido juego.</p>
+                        <a href="#" class="btn">SEE MORE</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://via.placeholder.com/800x500" class="d-block w-100" alt="Juego 3">
+                <div class="carousel-caption">
+                    <img src="images/R.jpg" alt="Miniatura">
+                    <div class="caption-text">
+                        <h2>HALO INFINITE</h2>
+                        <p>La pinche Descripción del jodido juego.</p>
+                        <a href="#" class="btn">SEE MORE</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Botones de navegación -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#gameCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#gameCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+    </div>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
