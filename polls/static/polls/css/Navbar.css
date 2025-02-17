@@ -9,6 +9,10 @@ html {
     font-size: 5px;
 }
 
+a {
+    text-decoration: none;
+}
+
 .custom-navbar {
     background-color: #000000 !important;
     padding-left: 5px;
@@ -57,6 +61,12 @@ html {
     height: 100%;
     width: 100%;
 }
+
+/* @media screen and (min-width: 300px) and (max-width: 768px) { 
+    #hero-title {
+        font-size: 10px;
+    }
+} */
 
 .logo {
     margin-right: 20px;
@@ -169,6 +179,7 @@ body::after {
     align-items: center; /* Centra verticalmente */
     justify-content: center; /* Centra horizontalmente */
     text-align: center;
+    text-decoration: none;
 }
 
 .fonts{

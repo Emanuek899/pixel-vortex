@@ -44,7 +44,9 @@
 							<a class="nav-link fonts tamaño" href="#">ABOUT US</a>
 						</li>
 					</ul>
-					<button class=" btn-outline-success botton fonts" type="submit">LOG IN</button>
+					<a href="{% url 'login' %}">
+						<button class=" btn-outline-success botton fonts" type="submit">LOG IN</button>
+					</a>
 				</div>
     		</div>
 		</nav>
@@ -55,4 +57,7 @@
     {% endblock %}
 	
 </body>
+<footer>
+
+</footer>
 </html>
