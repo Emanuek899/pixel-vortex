@@ -62,12 +62,6 @@ a {
     width: 100%;
 }
 
-/* @media screen and (min-width: 300px) and (max-width: 768px) { 
-    #hero-title {
-        font-size: 10px;
-    }
-} */
-
 .logo {
     margin-right: 20px;
      /* Ajusta este valor para mover el logo más a la derecha */
@@ -276,12 +270,21 @@ body::after {
 #hero-title {
     line-height: 80px;
     font-size: 65px;
+    font-family: "TROUBLE_FONT";
+    color: #ffffff;
 }
 
 #hero-subtitle {
     font-size: 35px;
+    font-family: "TROUBLE_FONT";
+    color: #ffffff;
 }
 
+@media screen and (min-width: 300px) and (max-width: 768px) { 
+    #hero-title {
+        font-size: 10px;
+    }
+}
 
 .desingtext2{
     font-size: 50px;
