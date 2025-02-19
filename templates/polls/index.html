@@ -1,0 +1,141 @@
+{% extends "polls/master.html" %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+<section>
+  <div class="hero-container">
+    <div class="hero-back">
+        <img class="hero-image" src="{% static 'polls/images/bitmap.webp' %}">
+    </div>
+    <div class="hero-content-container">
+        <div class="hero-content">
+            <div>
+                <img id="hero-logo" src="{% static 'polls/images/alien_sentado_logo.svg' %}" alt="Logo" width="170px" height="222px" class="d-inline-block align-text-top">
+            </div>
+            <br>
+            <div class="contenedor_texto">
+                <p id="hero-title">THE BEST DIGITAL GAMES WITH JUST ONE CLICK.</p>
+                <p id="hero-subtitle">DISCOVER EXCLUSIVE OFFERS, PLAY INSTANTLY</p>
+            </div>
+        </div>
+        <div class="contenedor1">
+            <button class="boton_joy" type="submit">JOIN</button>  
+        </div>
+    </div>
+</div>
+<div class="navbar-border"></div>
+</section>
+
+<section>
+
+</section>  
+
+<section> 
+  <div id="more-container">
+		<p class="desingtext" id="more-title">MORE GAMES</p>
+
+		<div class="grid"> 
+
+			<div class="contenedores">
+        <div>
+          <img id="imgdesing" src="{% static 'polls/images/call of.jpg' %}" >
+        </div>  
+      </div>  
+
+      <div class="contenedores">
+        <div>
+          <img id="imgdesing" src="{% static 'polls/images/thelast.jpg' %}" >
+        </div>  
+      </div>  
+      <div class="contenedores">
+        <div>
+          <img id="imgdesing" src="{% static 'polls/images/left.png' %}" >
+        </div>  
+      </div>  
+      <div class="contenedores">
+        <div>
+          <img id="imgdesing" src="{% static 'polls/images/out2.png' %}" >
+        </div>  
+      </div>  
+      
+      <div class="contenedores">
+        <div>
+          <img id="imgdesing" src="{% static 'polls/images/grand.png' %}" >
+        </div>  
+      </div>  
+
+      <div class="contenedores">
+        <div>
+          <img id="imgdesing" src="{% static 'polls/images/red.webp' %}" >
+        </div>  
+      </div>  
+
+      <div class="contenedores">
+        <div>
+          <img id="imgdesing" src="{% static 'polls/images/left.png' %}" >
+        </div>  
+      </div>  
+
+      <div class="contenedores">
+        <div>
+          <img id="imgdesing" src="{% static 'polls/images/left.png' %}" >
+        </div>  
+      </div>  
+
+      
+
+		</div>	
+
+	</div> 
+
+</section>
+{% endblock content  %}
+
+	<h1>LATEST</h1>
+
+    <div id="gameCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://via.placeholder.com/800x500" class="d-block w-100" alt="Juego 1">
+                <div class="carousel-caption">
+                    <img src="images/BO6_MP_Derelict_001_BRANDED.webp" alt="Miniatura">
+                    <div class="caption-text">
+                        <h2>CALL OF DUTY BLACK OPS 6</h2>
+                        <p>La pinche Descripción del jodido juego.</p>
+                        <a href="#" class="btn">SEE MORE</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://via.placeholder.com/800x500" class="d-block w-100" alt="Juego 2">
+                <div class="carousel-caption">
+                    <img src="images/R (1).jpg" alt="Miniatura">
+                    <div class="caption-text">
+                        <h2>CYBERPUNK 2077</h2>
+                        <p>La pinche Descripción del jodido juego.</p>
+                        <a href="#" class="btn">SEE MORE</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://via.placeholder.com/800x500" class="d-block w-100" alt="Juego 3">
+                <div class="carousel-caption">
+                    <img src="images/R.jpg" alt="Miniatura">
+                    <div class="caption-text">
+                        <h2>HALO INFINITE</h2>
+                        <p>La pinche Descripción del jodido juego.</p>
+                        <a href="#" class="btn">SEE MORE</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Botones de navegación -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#gameCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#gameCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+    </div>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
