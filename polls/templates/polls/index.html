@@ -38,9 +38,11 @@
 		<div class="grid"> 
 
 			<div class="contenedores">
-        <div>
-          <img id="imgdesing" src="{% static 'polls/images/call of.jpg' %}" >
-        </div>  
+          <img id="imgdesing" src="{% static 'polls/images/call of.jpg' %}" > 
+          <div class="info-oculta">
+            <p class="desingtext1">CALL OF DUTY MW3.</p>
+            <button class="boton_juegos" type="submit">SEE MORE</button>  
+          </div>    
       </div>  
 
       <div class="contenedores">
@@ -67,19 +69,19 @@
 
       <div class="contenedores">
         <div>
-          <img id="imgdesing" src="{% static 'polls/images/red.webp' %}" >
+          <img id="imgdesing" src="{% static 'polls/images/red.jpg' %}" >
         </div>  
       </div>  
 
       <div class="contenedores">
         <div>
-          <img id="imgdesing" src="{% static 'polls/images/left.png' %}" >
+          <img id="imgdesing" src="{% static 'polls/images/residen.png' %}" >
         </div>  
       </div>  
 
       <div class="contenedores">
         <div>
-          <img id="imgdesing" src="{% static 'polls/images/left.png' %}" >
+          <img id="imgdesing" src="{% static 'polls/images/res8.png' %}" >
         </div>  
       </div>  
 
@@ -89,7 +91,14 @@
 
 	</div> 
 
+  <div class="navbar-border"></div>
 </section>
+
+<section>
+  <div id="more-container">
+		<p class="desingtext" id="more-title">MORE GAMES</p>
+</section>
+
 {% endblock content  %}
 
 	<h1>LATEST</h1>

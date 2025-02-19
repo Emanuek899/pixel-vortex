@@ -401,6 +401,7 @@ body::after {
     background-color: #000000;
     
     
+    
 }
 
 #more-title {
@@ -410,24 +411,53 @@ body::after {
 
 }
 
-.contenedores{
+.contenedores {
     background-color: rgb(66, 65, 65);
     border-radius: 15px;
     width: 300px;
     height: 400px;
-}
-
-.contenedores div{
-    border-radius: 15px;
-    width: 300px;
-    height: 400px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
 #imgdesing {
-    border-radius: 15px;
-    width: 300px;
-    height: 400px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    
-    
+    transition: opacity 0.3s ease-in-out;
+}
+
+.contenedores:hover {
+    transform: scale(1.1); /* Aumenta el tamaño */
+    background-color: rgba(66, 65, 65, 0.8);
+}
+
+.contenedores:hover #imgdesing {
+    opacity: 0.3; /* Hace que la imagen se vea tenue y deje ver el fondo */
+}
+
+.boton_juegos{
+    height: 40px;
+    width: 120px;
+    color: #000000; /* Texto en blanco */
+    border: 2px solid #62ED2E; /* Borde verde */
+    border-radius: 20px; /* Bordes redondeados */
+    background-color: #62ED2E; /* Fondo transparente */ /* Texto en negrita */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    font-size: 30px;
+    display: flex;
+    font-family: "TROUBLE_FONT";
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    text-align: center;
+}
+
+.desingtext1{
+    font-size: 80px;
+    font-family: 'TROUBLE_FONT';
+    color:#ffffff
 }
