@@ -25,15 +25,49 @@ a {
     background-color: #62ED2E; /* Color de la línea */
     width: 100%;
 }
-body {
-    /* background-image: url(../images/background.png); Ruta de la imagen */
-    background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
-    background-position: center; /* Centra la imagen en la pantalla */
-    background-repeat: no-repeat; /* No repite la imagen */
-    margin: 0; /* Elimina márgenes del body */
-    height: 100vh; /* Asegura que el cuerpo ocupe toda la altura de la pantalla */
-    position: relative; /* Necesario para posicionar el pseudo-elemento */
-  }
+
+.hero-container {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    top: 95px;
+}
+
+.hero-back {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.hero-back::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(
+        rgba(0,0,0,0.5) 0%,
+        rgba(0,0,0,1) 90%
+    );
+    display: flex;
+    align-items: center; /* Centra verticalmente */
+    justify-content: flex-start; /* Mantiene la imagen más a la izquierda */
+}
+
+.hero-image{
+    height: 100%;
+    width: 100%;
+}
+
+/* @media screen and (min-width: 300px) and (max-width: 768px) { 
+    #hero-title {
+        font-size: 10px;
+    }
+} */
+
 .logo {
     margin-right: 20px;
      /* Ajusta este valor para mover el logo más a la derecha */
@@ -145,6 +179,7 @@ body::after {
     align-items: center; /* Centra verticalmente */
     justify-content: center; /* Centra horizontalmente */
     text-align: center;
+    text-decoration: none;
 }
 
 .fonts{
@@ -177,12 +212,35 @@ body::after {
     margin-right: 10px;
 }
 
-.contenedor {
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
     display: flex;
     align-items: center; /* Centra verticalmente */
     justify-content: flex-start; /* Mantiene la imagen más a la izquierda */
-    height: 80vh; /* Ajusta según el tamaño del contenedor */
-    padding-left: 20%; /* Ajusta el margen izquierdo */
+    height: 30.86vh;
+    width: calc(100vw - 565px); /* Ajusta según el tamaño del contenedor */ /* Ajusta el margen izquierdo */
+    position: absolute;
+}
+
+.hero-content-container {
+    height: 30.86vh;
+    width: calc(100vw - 565px);
+}
+
+#hero-logo {
+    stroke-width: 5px;
+    stroke: #ffffff;
+}
+
+.contenedor1{
+    width: 100;
+    height: 200px;
+    background-color: rgb(0, 0, 0);
 }
 
 .content {
@@ -215,8 +273,13 @@ body::after {
     color:#ffffff
 }
 
-.texto {
-    line-height: 80px; /* Interlineado fijo */
+#hero-title {
+    line-height: 80px;
+    font-size: 65px;
+}
+
+#hero-subtitle {
+    font-size: 35px;
 }
 
 
@@ -237,7 +300,11 @@ body::after {
 }
 
 .contenedor_texto{
-    width: 70%;
+    font-size: 4vw;  /* Hace que el texto sea un porcentaje del ancho de la ventana */
+    width: 100%;
+    height: auto;
+    word-wrap: break-word;
+    padding: 10px;
 }
 
 .contenedor_boton{
@@ -264,13 +331,53 @@ body::after {
     text-align: center;
 }
 
-.contenedor1{
-    width: 100;
-    height: 200px;
-    background-color: rgb(0, 0, 0);
-}
-
 /* cosas de la navbar */
 .navbar_container {
+    
+}
+
+/* Carrusel */
+.carousel-item img {
+    height: 500px;
+    object-fit: cover;
 
 }
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    border-radius: 15px;
+    bottom: 20px;
+    width: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    text-align: left;
+}
+.carousel-caption img {
+    width: 500px; /* Imagen más grande */
+    height: auto;
+    border-radius: 10px;
+    margin-right: 20px;
+    
+}
+.caption-text {
+    flex: 1;
+}
+.carousel-caption h2 {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+.btn {
+    background: limegreen;
+    color: black;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    display: inline-block;
+    margin-top: 10px;
+}
+    

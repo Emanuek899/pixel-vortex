@@ -51,8 +51,7 @@
 	</div>
 
 
-  <div class="navbar-border"></div>
-
+    <div class="navbar-border"></div>
 		<div class="contenedor">
 			<div class="contenedor_imagen">
 				<img src="{% static 'polls/images/alien_sentado_logo.svg' %}" alt="Logo" width="170px" height="222px" class="d-inline-block align-text-top">
@@ -62,11 +61,9 @@
 			<p class="desingtext texto">THE BEST DIGITAL GAMES WITH JUST ONE CLICK.</p>
 			<p class="desingtext2">DISCOVER EXCLUSIVE OFFERS, PLAY INSTANTLY</p>
 		</div>
-		<div class="contenedor1">
-      <a href="{% url 'login' %}">
-			  <button class="boton_joy" type="submit" >JOIN</button>  
-      </a>
-		</div> 
+		{% comment %} <div class="contenedor1">
+			<button class="boton_joy" type="submit">JOIN</button>  
+		</div> {% endcomment %}
 	</div>
 
 	<div class="contenedor1">
