@@ -68,3 +68,34 @@
     text-align: center;
     color: #ffffff;
 }
+#text{
+    font-family: "TROUBLE_FONT";
+    font-size: 15px;
+    text-align: center;
+    color: #ffffff;
+}
+#form {
+    width: 100%;
+}
+
+.form-control {
+    height: 40px;
+    width: 100%;
+    border-radius: 20px;
+    background-color: rgba(0,0,0,0);
+}
+
+.form-control:focus{
+    border-color: #62ED2E;
+    outline: none;
+    box-shadow: none;
+    background-color: rgba(0,0,0,0);
+}
+
+.form-control::placeholder{
+    color: darkgray;
+}
+
+.signup {
+    width: calc(100% - 310px);
+}
