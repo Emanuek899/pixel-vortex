@@ -23,7 +23,7 @@ from members import members_views
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", polls_views.index, name="index"),
-    path("login", members_views.login, name="login"),
-    path("catalogue", polls_views.catalogue, name="catalogue"),
+    path("login/", members_views.login, name="login"),
+    path("catalogue/", polls_views.catalogue, name="catalogue"),
     path("sign-up/", members_views.signup, name="signup")
 ]
