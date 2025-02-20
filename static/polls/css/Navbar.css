@@ -443,25 +443,32 @@ body::after {
     opacity: 0; /* Hace que la imagen se vea tenue y deje ver el fondo */
 }
 
-.boton_juegos{
+.boton_juegos {
     height: 40px;
     width: 120px;
-    color: #000000; /* Texto en blanco */
+    color: #000000; /* Texto en negro */
     border: 2px solid #62ED2E; /* Borde verde */
-    border-radius: 20px; /* Bordes redondeados */
-    background-color: #62ED2E; /* Fondo transparente */ /* Texto en negrita */
-    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    border-radius: 20px;
+    background-color: #62ED2E;
+    cursor: pointer;
     font-size: 20px;
     display: flex;
     font-family: "TROUBLE_FONT";
-    align-items: center; /* Centra verticalmente */
-    justify-content: center; /* Centra horizontalmente */
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    bottom:10px;
-    right:10px;
-    position:absolute;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
     padding: 10px;
-    
+
+    opacity: 0; /* Oculta el botón */
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Hace que el botón aparezca cuando el usuario pase el mouse */
+.contenedores:hover .boton_juegos {
+    opacity: 1;
 }
 
 .desingtext1{
