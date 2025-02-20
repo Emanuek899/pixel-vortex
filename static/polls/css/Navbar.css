@@ -395,7 +395,7 @@ body::after {
     padding-top: 30px;
     display: grid;
     justify-content: center;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: auto auto auto auto auto;
     grid-gap: 40px;
     }
 
@@ -417,8 +417,8 @@ body::after {
 .contenedores {
     background-color: rgb(66, 65, 65);
     border-radius: 15px;
-    width: 300px;
-    height: 400px;
+    width: 200px;
+    height: 300px;
     position: relative;
     overflow: hidden;
     transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
@@ -440,7 +440,7 @@ body::after {
 }
 
 .contenedores:hover #imgdesing {
-    opacity: 0.3; /* Hace que la imagen se vea tenue y deje ver el fondo */
+    opacity: 0; /* Hace que la imagen se vea tenue y deje ver el fondo */
 }
 
 .boton_juegos{
@@ -451,16 +451,30 @@ body::after {
     border-radius: 20px; /* Bordes redondeados */
     background-color: #62ED2E; /* Fondo transparente */ /* Texto en negrita */
     cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-    font-size: 30px;
+    font-size: 20px;
     display: flex;
     font-family: "TROUBLE_FONT";
     align-items: center; /* Centra verticalmente */
     justify-content: center; /* Centra horizontalmente */
     text-align: center;
+    bottom:10px;
+    right:10px;
+    position:fixed;
+    padding: 10px;
+    
 }
 
 .desingtext1{
-    font-size: 80px;
+    padding:15px;
+    font-size: 20px;
     font-family: 'TROUBLE_FONT';
     color:#ffffff
+}
+
+.desingtext2{
+    padding: 15px;
+    font-size: 11px;
+    font-family: 'TROUBLE_FONT';
+    color:#ffffff;
+    letter-spacing: 1px;
 }
