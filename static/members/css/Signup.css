@@ -1,0 +1,70 @@
+@font-face {
+    font-family: TROUBLE_FONT;
+    src: url(../fonts/TROUBLE_FONT.TTF) format(truetype);
+}
+
+.signup-page{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.signup-front{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.signup-front img{
+    width: 100.1%;
+    height: 100%;
+    top: 0%;
+    right: 0%;
+    object-fit: cover;
+}
+
+.signup-front::after{
+    position: absolute;
+    content: "";
+    top: 0%;
+    right: 0%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+    z-index: 1;
+}
+
+/* login-form */
+#signup-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+}
+
+.signup{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+#logo-container{
+    width: 260px;
+    height: auto;
+
+}
+
+#logo{
+    width: 100%;
+    height: 100%;
+}
+
+#title{
+    font-family: "TROUBLE_FONT";
+    font-size: 50px;
+    text-align: center;
+    color: #ffffff;
+}
