@@ -35,7 +35,6 @@
     z-index: 1;
 }
 
-/* login-form */
 #signup-container{
     display: flex;
     flex-direction: column;
@@ -90,6 +89,7 @@
     outline: none;
     box-shadow: none;
     background-color: rgba(0,0,0,0);
+    color: #ffffff;
 }
 
 .form-control::placeholder{
@@ -98,4 +98,27 @@
 
 .signup {
     width: calc(100% - 310px);
+}
+#btn{
+    display: flex;
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    text-align: center;
+    width: 182px;
+    height: 39px;
+    background-color: #62ED2E;
+    color: black;
+    font-family: "TROUBLE_FONT";
+    font-size: 25px;
+    border-radius: 30px;
+    border-color: #62ED2E;
+    margin: auto;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 1000px black inset !important;
+    -webkit-text-fill-color: white !important;
+    transition: background-color 5000s ease-in-out 0s;
 }
