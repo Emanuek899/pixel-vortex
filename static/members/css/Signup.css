@@ -17,7 +17,7 @@
 }
 
 .signup-front img{
-    width: 100.1%;
+    width: 100%;
     height: 100%;
     top: 0%;
     right: 0%;
@@ -35,7 +35,6 @@
     z-index: 1;
 }
 
-/* login-form */
 #signup-container{
     display: flex;
     flex-direction: column;
@@ -67,4 +66,77 @@
     font-size: 50px;
     text-align: center;
     color: #ffffff;
+}
+#text{
+    font-family: "TROUBLE_FONT";
+    font-size: 15px;
+    text-align: center;
+    color: #ffffff;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 55px;
+}
+#form {
+    width: 100%;
+}
+
+.form-control {
+    height: 40px;
+    width: 100%;
+    border-radius: 20px;
+    background-color: rgba(0,0,0,0);
+}
+
+.form-control:focus{
+    border-color: #62ED2E;
+    outline: none;
+    box-shadow: none;
+    background-color: rgba(0,0,0,0);
+    color: #ffffff;
+}
+
+.form-control::placeholder{
+    color: darkgray;
+}
+
+.signup {
+    width: calc(100% - 310px);
+}
+#btn{
+    display: flex;
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    text-align: center;
+    width: 182px;
+    height: 39px;
+    background-color: #62ED2E;
+    color: black;
+    font-family: "TROUBLE_FONT";
+    font-size: 25px;
+    border-radius: 30px;
+    border-color: #62ED2E;
+    margin: auto;
+}
+#btn-other{
+    background-color:black;
+    color:#ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14;
+    border-radius: 30px;
+    border-color: #ffffff;
+    width: 180px;
+    height: 40px;
+}
+.social-login {
+    display: flex;
+    justify-content: center; /* Centrar los botones */
+    gap: 10px; /* Espacio entre los botones */
+}
+
+.google, .facebook {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
 }
