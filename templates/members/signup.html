@@ -29,13 +29,17 @@
                             <input type="password" class="form-control" id="Password" placeholder="Password">
                         </div>                        
                         <button id="btn"type="sign" class="btn btn-primary">Sign</button>
-                        <p id="text">do you have an account?<a href="">log in</a></p>
+                        <p id="text">do you have an account?<a href="" id="text-links">log in</a></p>
                     </form>
                     <div class="social-login">
-                        <button id="btn-other" class="Google">Sign in with Google</button>
-                        <button id="btn-other" class="Facebook">Sign in with Facebook</button>
+                        <button id="btn-other" class="Google"><img src="{% static 'members/icons/google.svg'%}" id="social-logo">Sign in with Google</button>
+                        <button id="btn-other" class="Facebook"><img src="{% static 'members/icons/facebook.svg'%}" alt="">Sign in with Facebook</button>
                     </div>
-                </div>                
+                </div>
+                <footer class="text-footer">
+                    By creating an account, you agree to the <a href="" id="text-links">Terms of service</a>. For more information about Pixel vortex's privacy practices,<br>
+                    see the Pixel Vortex <a href="" id="text-links">Privacy Statement</a>. We'll occasionally send you account-related emails.
+                </footer>                
             </div>
             <div class="signup-front">
                 <img src="{% static 'members/images/view-neon-illuminated-gaming-desk-setup-with-keyboard (1) (1)_11zon_11zon.webp' %}" alt="">
