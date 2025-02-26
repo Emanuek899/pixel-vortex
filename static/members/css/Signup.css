@@ -92,6 +92,7 @@
     width: 100%;
     border-radius: 20px;
     background-color: rgba(0,0,0,0);
+    color: #ffffff;
 }
 
 .form-control:focus{
