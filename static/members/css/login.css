@@ -70,7 +70,18 @@
     margin-top: 50px;
     margin-bottom: 50px;
 }
-
+p{
+    font-family: "TROUBLE_FONT";
+    font-size: 15px;
+    text-align: center;
+    color: #ffffff;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 55px;
+}
+a{
+    color: #62ED2E;
+}
 #form {
     width: 100%;
 }
@@ -95,4 +106,50 @@
 
 .login {
     width: calc(100% - 310px);
+}
+#btn{
+    display: flex;
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    text-align: center;
+    width: 182px;
+    height: 39px;
+    background-color: #62ED2E;
+    color: black;
+    font-family: "TROUBLE_FONT";
+    font-size: 25px;
+    border-radius: 30px;
+    border-color: #62ED2E;
+    margin: auto;
+}
+#btn-other{
+    background-color:black;
+    color:#ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14;
+    border-radius: 30px;
+    border-color: #ffffff;
+    width: 200px;
+    height: 40px;
+}
+.social-login {
+    display: flex;
+    justify-content: center; /* Centrar los botones */
+    gap: 10px; /* Espacio entre los botones */
+}
+
+.google, .facebook {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    text-align: center;
+    padding: 10px;
 }
