@@ -98,6 +98,7 @@ a{
     outline: none;
     box-shadow: none;
     background-color: rgba(0,0,0,0);
+    color: #ffffff;
 }
 
 .form-control::placeholder{
