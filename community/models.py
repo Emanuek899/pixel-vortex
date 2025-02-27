@@ -34,7 +34,7 @@ class Comment(models.Model):
         verbose_name_plural = _("Comments")
 
     def __str__(self):
-        return self.name
+        return self.user.username if self.user else "No user selected"
     
 
 class Post(models.Model):
@@ -45,12 +45,12 @@ class Post(models.Model):
     post_description = models.CharField(max_length=100, null=False, blank=False)
     post_date = models.DateTimeField(auto_now_add=True)
     likes_count = models.PositiveIntegerField(default=0)
-    comments = models.ForeignKey(Comment, related_name="comments", on_delete=models.CASCADE)
-
+    comments = models.ManyToManyField(Comment, related_name="comments", blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         verbose_name = _("Post")
         verbose_name_plural = _("Posts")
 
     def __str__(self):
-        return self.name
+        return "Post title: [{}], created at: [{}]".format(self.post_title, self.created_at)

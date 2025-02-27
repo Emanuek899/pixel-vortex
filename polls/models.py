@@ -5,20 +5,20 @@ from django.apps import apps
 # Create your models here.
 
 class Classification(models.Model):
-    clasification_id = models.AutoField(primary_key=True)
-    clasification = models.CharField(max_length=50, null=False, blank=False)
+    classification_id = models.AutoField(primary_key=True)
+    classification = models.CharField(max_length=50, null=False, blank=False)
 
     class Meta:
         verbose_name = _("Classification")
         verbose_name_plural = _("Classifications")
 
     def __str__(self):
-        return "{}, {}".format(self.clasification_id, self.clasification)
+        return "{}, {}".format(self.classification_id, self.classification)
 
 
 class Genre(models.Model):
     genre_id = models.AutoField(primary_key=True)
-    genre = models.CharField(max_length=50, null=False, blank=False)
+    genre = models.CharField(max_length=50, null=False, blank=False) 
     
     class Meta:
         verbose_name = _("Genre")
@@ -32,7 +32,7 @@ class Videogame(models.Model):
     videogame_id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=30, null=False, unique=True, blank=False)
     description = models.CharField(max_length=100, null=False, blank=False)
-    clasification = models.ManyToManyField(Classification, related_name="game_classification")
+    classification = models.ManyToManyField(Classification, related_name="game_classification")
     genre = models.ManyToManyField(Genre, related_name="game_genre")
     platform = models.CharField(choices = [
         ("PC", "Computer"),
@@ -46,7 +46,9 @@ class Videogame(models.Model):
         verbose_name_plural = _("Videogames")
 
     def __str__(self):
-        return "{}, {}, {}, {}, {}".format(self.videogame_id, self.name, self.description, self.genre, self.clasification)
+        genres = ", ".join([g.genre for g in self.genre.all()]) if self.genre.exists() else "No genre"
+        classification = ", ".join([c.classification for c in self.classification.all()]) if self.classification.exists() else "No classification"
+        return "{}, {}, {}, {}, {}".format(self.videogame_id, self.name, self.description, genres, classification)
 
 
 class License(models.Model):
@@ -68,7 +70,7 @@ class License(models.Model):
         ("A", "Available"),
         ("R", "Redeemed"),
         ("D", "Duplicated"),
-    ], max_length=20)
+    ], max_length=20, default="A")
     game = models.ForeignKey(Videogame, on_delete=models.CASCADE, related_name="Licenses")
 
     class Meta:
@@ -76,4 +78,5 @@ class License(models.Model):
         verbose_name_plural = _("Licenses")
 
     def __str__(self): 
-        return self.key
+        product = self.game.name if self.game else "No game selected"
+        return "Product: {}, Key: {}".format(product, self.key)
