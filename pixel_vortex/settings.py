@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "polls",
     "members",
     "community",
+    "sells",
 ]
 
 MIDDLEWARE = [

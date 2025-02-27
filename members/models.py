@@ -1,22 +1,14 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser
-from polls.models import Genre, License
 from django.utils.translation import gettext_lazy as _
 from django.apps import apps
-from django.apps import apps
-from django.contrib.auth.models import AbstractUser, Group, Permission
 
-
-# Create your models here.
-class CustomUser(AbstractUser):
-    communities = models.ManyToManyField("community.Community", related_name = "members")
+class CustomUser(models.Model):
+    communities = models.ManyToManyField("community.Community", related_name="members")
     last_login = models.DateTimeField(auto_now=False, auto_now_add=False)
-    preferences = models.ManyToManyField(Genre, related_name="preferences")
-    licenses = models.ManyToManyField(License, related_name="user_licenses")
-    
-    groups = models.ManyToManyField(Group, related_name="customuser_groups")
-    user_permissions = models.ManyToManyField(Permission, related_name="customuser_permissions")
-
+    preferences = models.ManyToManyField('polls.Genre', related_name="preferences")  # Usamos `apps.get_model` para evitar el ciclo
+    licenses = models.ManyToManyField('polls.License', related_name="user_licenses")  # Usamos `apps.get_model` también
+    groups = models.ManyToManyField('auth.Group', related_name="customuser_groups")
+    user_permissions = models.ManyToManyField('auth.Permission', related_name="customuser_permissions")
 
     class Meta:
         verbose_name = _("CustomUser")
@@ -32,7 +24,6 @@ class OldPassword(models.Model):
     password_hash = models.CharField(max_length=128)
     change_date = models.DateTimeField(auto_now_add=True)
 
-
     class Meta:
         verbose_name = _("OldPassword")
         verbose_name_plural = _("OldPasswords")
@@ -41,3 +32,42 @@ class OldPassword(models.Model):
         return self.name
     
 
+class Cart(models.Model):
+    cart_id = models.BigAutoField(primary_key=True)
+    user = models.OneToOneField(CustomUser, related_name="user_cart", on_delete=models.CASCADE)
+    product = models.ForeignKey('polls.License', related_name="license_product", on_delete=models.CASCADE)  # Usar 'apps.get_model'
+    quantity = models.IntegerField(null=False, default=1)
+
+    class Meta:
+        verbose_name = _("Cart")
+        verbose_name_plural = _("Carts")
+
+    def __str__(self):
+        return self.name    
+    
+
+class Wishlist(models.Model):
+    wishlist_id = models.BigAutoField(primary_key=True)
+    user = models.OneToOneField(CustomUser, related_name="user_wishlist", on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = _("Wishlist")
+        verbose_name_plural = _("Wishlists")
+
+    def __str__(self):
+        return self.name
+
+
+class Item_wishlist(models.Model):
+    item_wishlist = models.BigAutoField(primary_key=True)
+    wishlist = models.ForeignKey(Wishlist, related_name="wish_items", on_delete=models.CASCADE)
+    added_at = models.DateTimeField(auto_now_add=True)
+    product = models.ForeignKey('polls.Videogame', related_name="wish_product", on_delete=models.CASCADE)  # Usar 'apps.get_model'
+
+    class Meta:
+        verbose_name = _("Item_wishlist")
+        verbose_name_plural = _("Item_wishlists")
+
+    def __str__(self):
+        return self.name
