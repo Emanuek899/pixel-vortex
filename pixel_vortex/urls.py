@@ -18,12 +18,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from polls import polls_views
-from members import members_views
+from django.urls import include
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", polls_views.index, name="index"),
-    path("login/", members_views.login, name="login"),
+    path("account/", include("members.urls")),
     path("catalogue/", polls_views.catalogue, name="catalogue"),
-    path("sign-up/", members_views.signup, name="signup")
 ]
