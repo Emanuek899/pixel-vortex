@@ -4,12 +4,12 @@ from django.apps import apps
 from django.contrib.auth.models import AbstractUser
 
 class CustomUser(AbstractUser):
-    communities = models.ManyToManyField("community.Community", related_name="members", null=True, blank=True)
-    last_login = models.DateTimeField(auto_now=False, auto_now_add=False)
-    preferences = models.ManyToManyField('polls.Genre', related_name="preferences", null=True, blank=True)  # Usamos `apps.get_model` para evitar el ciclo
-    licenses = models.ManyToManyField('polls.License', related_name="user_licenses", null=True, blank=True)  # Usamos `apps.get_model` también
+    communities = models.ManyToManyField("community.Community", related_name="members", blank=True)
+    preferences = models.ManyToManyField('polls.Genre', related_name="preferences",  blank=True)  # Usamos `apps.get_model` para evitar el ciclo
+    licenses = models.ManyToManyField('polls.License', related_name="user_licenses", blank=True)  # Usamos `apps.get_model` también
     groups = models.ManyToManyField('auth.Group', related_name="customuser_groups")
     user_permissions = models.ManyToManyField('auth.Permission', related_name="customuser_permissions")
+
 
     class Meta:
         verbose_name = _("CustomUser")
