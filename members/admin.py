@@ -18,10 +18,10 @@ class CustomUserAdmin(UserAdmin):
 
     # Add customized fields without touch original User model admin
     fieldsets = UserAdmin.fieldsets + (
-        (None, {'fields': ('communities', 'preferences', 'licenses')}),
+        (None, {'fields': ('preferences', 'licenses')}),
     )
     add_fieldsets = UserAdmin.add_fieldsets + (
-        (None, {'fields': ('communities', 'preferences', 'licenses')}),
+        (None, {'fields': ('preferences', 'licenses')}),
     )
 
 

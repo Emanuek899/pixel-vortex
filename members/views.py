@@ -8,6 +8,7 @@ from . import models
 def user_login(request):
     errors = {}
     if request.method == "POST":
+        # take the email and password from the form
         email = request.POST.get("email")
         password = request.POST.get("password")
 
