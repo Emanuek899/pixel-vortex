@@ -12,7 +12,7 @@ class Community(models.Model):
     creation_date = models.DateTimeField(auto_now_add=True)
     status = models.CharField(choices=[("A", "Active"), ("I", "Inactive")], max_length=20)
     category = models.ForeignKey(Genre, related_name="categories", on_delete=models.CASCADE)
-    
+    created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         verbose_name =_("Community")
