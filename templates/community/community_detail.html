@@ -1,5 +1,27 @@
-    <span>{{ community.community_id }}</span>
-    <span>{{ community.community_name }}</span>
-    {% for user in community.users.all  %}
-    <span>{{ user.username }}</span>
-    {% endfor %}
+<span>{{ community.community_id }}</span>
+<span>{{ community.community_name }}</span>
+<br>
+<span>Users</span><br>
+{% for user in community.users.all  %}
+<span>{{ user.username }}</span><br>
+{% endfor %}
+
+<form method="POST" action="{% url "new_post" community.community_id%}">
+    {% csrf_token %}
+    <input type="text" name="post_title">
+    <input type="text" name="post_description">
+    <button id="btn" type="submit" class="btn btn-primary">Post</button>
+</form>
+
+<span>Posts</span><br>
+{% if not posts %}
+<span>No hay posts recientes</span><br>
+{% else %}
+{% for post in posts %}
+<span>User</span><br>
+<span>{{ post.user.username }}</span><br>
+<span>Make the following post</span><br>
+<span>{{ post.post_title }}</span><br>
+<span>{{ post.post_description }}</span><br><br>
+{% endfor %} <br>
+{% endif %}

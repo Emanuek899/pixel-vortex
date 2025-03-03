@@ -13,7 +13,8 @@ def showCommunities(request):
 def community(request, community_id):
     # Check if a community exist (is and instance of Community) by id
     community = get_object_or_404(models.Community, community_id=community_id)
-    return render(request,"community/community_detail.html", {"community": community})
+    posts = models.Post.objects.filter(community=community)
+    return render(request,"community/community_detail.html", {"community": community, "posts":posts})
 
 
 @login_required
@@ -28,3 +29,20 @@ def joinCommunity(request, community_id):
         community.save()
     
     return redirect("community", community_id=community_id)
+
+@login_required
+def makePost(request, community_id):
+    community = get_object_or_404(models.Community, community_id=community_id)
+
+    if request.method == "POST":
+        post_title = request.POST.get("post_title")
+        post_description = request.POST.get("post_description")
+
+        if post_title and post_description:
+            post = models.Post.objects.create(
+                user = request.user,
+                community = community,
+                post_title = post_title,
+                post_description = post_description, 
+            )
+            return redirect("community", community_id=community_id)
