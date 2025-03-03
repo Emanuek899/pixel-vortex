@@ -1,0 +1,5 @@
+    <span>{{ community.community_id }}</span>
+    <span>{{ community.community_name }}</span>
+    {% for user in community.users.all  %}
+    <span>{{ user.username }}</span>
+    {% endfor %}
