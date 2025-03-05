@@ -34,7 +34,7 @@
 						</li>
 
 						<li class="nav-item">
-							<a class="nav-link fonts tamaño" href="#">COMMUNITY</a>
+							<a class="nav-link fonts tamaño" href="{% url "communities" %}">COMMUNITY</a>
 						</li>
 						
 						<li class="nav-item">
@@ -45,9 +45,13 @@
 							<a class="nav-link fonts tamaño" href="#">ABOUT US</a>
 						</li>
 					</ul>
-					<a href="{% url 'login' %}">
-						<button class=" btn-outline-success botton fonts" type="submit">LOG IN</button>
-					</a>
+					{% if request.user.is_authenticated %}
+						<div id="usermenu"></div>
+					{% else %}
+						<a href="{% url 'login' %}">
+							<button class=" btn-outline-success botton fonts" type="submit">LOG IN</button>
+						</a>
+					{% endif %}
 				</div>
     		</div>
 		</nav>

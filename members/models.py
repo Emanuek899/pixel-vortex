@@ -4,7 +4,6 @@ from django.apps import apps
 from django.contrib.auth.models import AbstractUser
 
 class CustomUser(AbstractUser):
-    communities = models.ManyToManyField("community.Community", related_name="members", blank=True)
     preferences = models.ManyToManyField('polls.Genre', related_name="preferences",  blank=True)  # Usamos `apps.get_model` para evitar el ciclo
     licenses = models.ManyToManyField('polls.License', related_name="user_licenses", blank=True)  # Usamos `apps.get_model` también
     groups = models.ManyToManyField('auth.Group', related_name="customuser_groups")
