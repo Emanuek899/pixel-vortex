@@ -1,14 +1,23 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-from django.apps import apps
 from django.contrib.auth.models import AbstractUser
 
-class CustomUser(AbstractUser):
-    preferences = models.ManyToManyField('polls.Genre', related_name="preferences",  blank=True)  # Usamos `apps.get_model` para evitar el ciclo
-    licenses = models.ManyToManyField('polls.License', related_name="user_licenses", blank=True)  # Usamos `apps.get_model` también
-    groups = models.ManyToManyField('auth.Group', related_name="customuser_groups")
-    user_permissions = models.ManyToManyField('auth.Permission', related_name="customuser_permissions")
 
+class CustomUser(AbstractUser):
+    preferences = models.ManyToManyField(
+        'polls.Genre',
+        related_name="preferences",
+        blank=True)   # Usamos `apps.get_model` para evitar el ciclo
+    licenses = models.ManyToManyField(
+        'polls.License',
+        related_name="user_licenses",
+        blank=True)   # Usamos `apps.get_model` también
+    groups = models.ManyToManyField(
+        'auth.Group',
+        related_name="customuser_groups")
+    user_permissions = models.ManyToManyField(
+        'auth.Permission',
+        related_name="customuser_permissions")
 
     class Meta:
         verbose_name = _("CustomUser")
@@ -30,12 +39,15 @@ class OldPassword(models.Model):
 
     def __str__(self):
         return self.name
-    
+
 
 class Cart(models.Model):
     cart_id = models.BigAutoField(primary_key=True)
     user = models.OneToOneField(CustomUser, related_name="user_cart", on_delete=models.CASCADE)
-    product = models.ForeignKey('polls.License', related_name="license_product", on_delete=models.CASCADE)
+    product = models.ForeignKey(
+        'polls.License',
+        related_name="license_product",
+        on_delete=models.CASCADE)
     quantity = models.IntegerField(null=False, default=1)
 
     class Meta:
@@ -43,8 +55,9 @@ class Cart(models.Model):
         verbose_name_plural = _("Carts")
 
     def __str__(self):
-        return self.name    
-    
+        return self.name
+
+
 # <Cart model> this only defines the cart
 class Wishlist(models.Model):
     wishlist_id = models.BigAutoField(primary_key=True)
@@ -65,7 +78,10 @@ class Item_wishlist(models.Model):
     item_wishlist = models.BigAutoField(primary_key=True)
     wishlist = models.ForeignKey(Wishlist, related_name="wish_items", on_delete=models.CASCADE)
     added_at = models.DateTimeField(auto_now_add=True)
-    product = models.ForeignKey('polls.Videogame', related_name="wish_products", on_delete=models.CASCADE)  # Usar 'apps.get_model'
+    product = models.ForeignKey(
+        'polls.Videogame',
+        related_name="wish_products",
+        on_delete=models.CASCADE)  # Usar 'apps.get_model'
 
     class Meta:
         verbose_name = _("Item_wishlist")

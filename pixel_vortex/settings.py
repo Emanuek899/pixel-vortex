@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "members.apps.MembersConfig",
     "community.apps.CommunityConfig",
     "sells.apps.SellsConfig",
+    "rest_framework",
 ]
 
 MIDDLEWARE = [
@@ -65,7 +66,7 @@ TEMPLATES = [
                 "django.template.context_processors.debug",
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
-                "django.contrib.messages.context_processors.messages",
+                "django.contrib.messages.context_processors.messages"
             ],
         },
     },
@@ -129,3 +130,9 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Custom user to AUTH
 AUTH_USER_MODEL = "members.CustomUser"
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS':
+        'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 5,
+}
