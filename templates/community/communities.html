@@ -1,0 +1,111 @@
+{% extends "master.html" %}
+{% load static %}
+{% block title %}Communities{% endblock title %}
+{% block extra_css %}<link rel="stylesheet" type="text/css" href="{% static 'community/css/communities.css' %}">{% endblock extra_css%}
+
+{% block content %}
+<div id="main-container">
+	<h1 class="title">most popular communities</h1>
+	{# Popular container #}
+	<div id="popular-container">
+		<div class="popular-content">
+			<img class="popular-img" src="{% static "community/images\bendy_header.jpg" %}">
+			<div class="popular-info">
+				<span class="popular-info-title">bendy ink machine</span>
+				<span class="popular-info-subtitle">welcome</span>
+				<span class="popular-info-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</span>
+				<a href="" class="info-btn">see more</a>
+			</div>
+		</div>
+		<div class="popular-content">
+			<img class="popular-img" src="{% static "community/images/dead_space_header.jpg" %}">
+			<div class="popular-info">
+				<span class="popular-info-title">Dead Space</span>
+				<span class="popular-info-subtitle">welcome</span>
+				<span class="popular-info-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</span>
+				<a href="" class="info-btn">see more</a>
+			</div>
+		</div>
+		<div class="popular-content">
+			<img class="popular-img" src="{% static "community/images/forza_motorsport_7_hero.png" %}">
+			<div class="popular-info">
+				<span class="popular-info-title">Forza Motorsport</span>
+				<span class="popular-info-subtitle">welcome</span>
+				<span class="popular-info-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</span>
+				<a href="" class="info-btn">see more</a>
+			</div>
+		</div>
+		<div class="popular-content">
+			<img class="popular-img" src="{% static 'community/images/nier_automata_header.jpg' %}">
+			<div class="popular-info">
+				<span class="popular-info-title">Nier Automata</span>
+				<span class="popular-info-subtitle">welcome</span>
+				<span class="popular-info-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</span>
+				<a href="" class="info-btn">see more</a>
+			</div>
+		</div>   
+	</div>
+	<hr class="line">
+	<h2 class="title">explore the community</h2>
+	{% verbatim %}
+	<div class="communities-container">
+		<div class="communities-list">
+			<div class="searchbar" id="search-bar-app">
+				<input 
+					v-model="searchQuery" 
+					@input="filterResults" 
+					type="text"
+					placeholder="Search..." 
+					class="search-bar">
+				<ul v-if="filteredResults.length" class="results-list">
+					<li v-for="(result, index) in filteredResults" :key="index">
+						{{ result }}
+					</li>
+				</ul>
+				<p v-else>No results found</p>
+			</div>
+			<div class="list" id="list">
+    			<div v-for="community in communities" :key="community.id" class="community-item">
+        			<div class="community-img-container"><img src="{% static 'community/images/{{community.community_grid }}' %}"></div>
+        			<div class="community-name">{{ community.community_name }}</div>
+    			</div>
+    			<div class="pagination">
+        			<button @click="prevPageMethod" :disabled="!prevPage">Anterior</button>
+        			<span>Página {{ currentPage }}</span>
+        			<button @click="nextPageMethod" :disabled="!nextPage">Siguiente</button>
+    			</div>
+			</div>
+		</div>
+		<div class="filters-list">
+		</div>
+	</div>
+	{% endverbatim  %}
+</div>
+<script src="{% static 'community/js/components/searchbar.js' %}"></script>
+<script src="{% static 'community/js/components/community_list.js' %}"></script>
+
+{% endblock content %}
+{% comment %} <h3>Posts Existentes</h3>
+        <ul>
+            <li v-for="post in posts" :key="post.POST_ID">
+                <div class="post-actions">
+                    <button @click="deletePost(post.POST_ID)" class="delete" :disabled="isDeleting">Eliminar</button>
+                </div>
+                <h3>{{ post.POST_TITLE }}</h3>
+                <p>{{ post.POST_DESCRIPTION }}</p>
+            </li>
+        </ul> {% endcomment %}
+{# <ul>
+	<li>
+		<div class="community-container">
+			<div class="community-img">
+				<img src="">
+			</div>
+			<div class="community-info">
+				<a href="" class="community-info-title"></a>
+				<p class="community-info-description"></p>
+				<a href="">join</a>
+			</div>
+		</div>
+	</li>
+</ul> #}
