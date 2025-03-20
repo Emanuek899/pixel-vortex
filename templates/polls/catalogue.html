@@ -1,1 +1,72 @@
-<h1>Este es el catalogo</h1>
+{% extends "master.html" %}
+{% load static %}
+{% block title %}Catalogue{% endblock title %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'polls/css/Catalogue.css' %}">{% endblock extra_css %}
+{% block content %}
+<section>
+    <div class="Catalogue-Container ">
+        <p id="Catalogue-title">Catalogue</p>
+    </div>
+    <div class="Catalogue-Container">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="..." class="d-block w-100" alt="...">
+                <img src="..." class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="..." class="d-block w-100" alt="...">
+                <img src="..." class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="..." class="d-block w-100" alt="...">
+                <img src="..." class="d-block w-100" alt="...">
+              </div>
+            </div>
+          </div>
+    </div>
+    
+    <div class="Catalogue-Container">
+      <aside class="sidebar">
+        <h2>Filters</h2>
+
+        <div class="filter-group">
+            <h3>Category</h3>
+            <label><input type="checkbox"> horror</label>
+            <label><input type="checkbox"> shooter</label>
+            <label><input type="checkbox"> simulación</label>
+            <label><input type="checkbox"> sports</label>
+            <label><input type="checkbox"> FPS</label>
+            <label><input type="checkbox"> RPG</label>
+            <label><input type="checkbox"> survival</label>
+            <label><input type="checkbox"> VR</label>
+            <label><input type="checkbox"> action</label>
+            <label><input type="checkbox"> adventure</label>
+            <label><input type="checkbox"> platform</label>
+            <label><input type="checkbox"> strategy</label>
+            <label><input type="checkbox"> puzzle</label>
+        </div>
+        <div class="filter-group">
+          <h3>Gamemode</h3>
+          <label><input type="checkbox"> multiplayer</label>
+          <label><input type="checkbox"> single-player</label>
+          <label><input type="checkbox"> co-op</label>
+          <label><input type="checkbox"> sandbox</label>
+      </div>
+        <div class="filter-group">
+            <h3>Plataform</h3>
+            <label><input type="checkbox"> PC</label>
+            <label><input type="checkbox"> playStation</label>
+            <label><input type="checkbox"> xbox</label>
+            <label><input type="checkbox"> nintendo</label>
+        </div>
+
+        <div class="filter-group">
+            <h3>Precio</h3>
+            <label> <span>2000</span></label>
+            <input type="range" class="slider" min="0" max="2000" value="2000" oninput="updateValue(this.value)">
+        </div>
+    </aside>
+    </div>
+</section>
+{% endblock content  %}
