@@ -37,6 +37,9 @@ const listApp = Vue.createApp({
                 this.currentPage--;
                 this.communitiesList(this.prevPage);
             }
+        },
+        goToCommunity(communityId) {
+            window.location.href = `/community/${communityId}/`;
         }
     },
     mounted() {

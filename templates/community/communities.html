@@ -66,8 +66,12 @@
 			</div>
 			<div class="list" id="list">
     			<div v-for="community in communities" :key="community.id" class="community-item">
-        			<div class="community-img-container"><img src="{% static 'community/images/{{community.community_grid }}' %}"></div>
-        			<div class="community-name">{{ community.community_name }}</div>
+        			<div class="community-item-img"><img :src="community.community_grid"></div>
+					<div class="community-item-info">
+						<span class="community-item-name">{{ community.community_name }}</span>
+						<span class="community-item-desc">{{ community.description }}</span>
+						<a @click="goToCommunity(community.community_id)" class="join-btn">join</a> 
+					</div>
     			</div>
     			<div class="pagination">
         			<button @click="prevPageMethod" :disabled="!prevPage">Anterior</button>

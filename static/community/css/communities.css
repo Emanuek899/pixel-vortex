@@ -4,7 +4,6 @@
 	font-family: "TROUBLE_FONT";
 	src: url(/static/community/fonts/TROUBLE_FONT.TTF) format("truetype");
 }
-
 .title {
 	color: #ffffff;
 	font-size: 80px;
@@ -114,6 +113,7 @@
 	display: flex;
 	flex-direction: row;
 	height: 1115px;
+	margin-top: 50px;
 	width: 100%;
 }
 .communities-list{
@@ -171,24 +171,73 @@
     font-size: 16px;
     padding: 5px 15px;
 }
+
 /*communities list*/
 .list{
 	height: 1020px;
 	padding-top: 30px;
 	width: 100%;
-	background-color: orangered;
 }
 .community-item{
+	border-bottom: 1px solid #62ED2E;
+	display: flex;
+	flex-direction: row;
 	height: 200px;
-	width: 100%;	
+	margin-bottom: 20px;
+	width: 100%;
+	position: relative;
 }
-.community-name{
+.community-item-img{
+	flex-shrink: 0;
+	width: 300px;
+	height: 200px;
+}
+.community-item-img img{
+	height: 100%;
+	object-fit: cover;
+	width: 100%;
+}
+.community-item-info{
 	color: #ffffff;
 	font-size: 20px;
-	background-color: red;
+	flex-grow: 1;
+	padding: 20px;
+	postition: absolute;
 }
-
-
+.community-item-name{
+	display: block;
+	font-size: 30px;
+	font-family: "TROUBLE_FONT";
+	margin-bottom: 20px;
+	letter-spacing: 0.5px;
+}
+.community-item-desc{
+	color: #C2C2C2;
+	display: block;
+	font-size: 15px;
+	font-family: "Roboto";
+	font-weight: 700;
+	letter-spacing: 0.2px;
+}
+.join-btn{
+	background-color: #62ED2E;
+	bottom: 20px;
+	color: #000000;
+	font-size: 15px;
+	font-family: "TROUBLE_FONT";
+	height: 20px;
+	position: absolute;
+	right: 20px;
+	text-align: center;
+	text-decoration: none;
+	transition: background-color 0.3s ease;
+	transition: color 0.3s ease;
+	width: 75px;
+}
+.join-btn:hover{
+	background-color: #000000;
+	color: #62ED2E; !important
+}
 
 .filters-list{
 	height: 100%;

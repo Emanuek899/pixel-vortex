@@ -8,10 +8,15 @@ from members.models import CustomUser
 class Community(models.Model):
     community_id = models.BigAutoField(
         primary_key=True)
-    community_grid = models.CharField(
-        max_length=100, null=True, blank=True)
+    community_grid = models.ImageField(
+        upload_to="community/communities_grids/")
     community_name = models.CharField(
         max_length=30, null=False, blank=False)
+    description = models.CharField(
+        max_length=100,
+        null=False,
+        blank=False
+    )
     users = models.ManyToManyField(
         CustomUser,
         related_name="community_users",
