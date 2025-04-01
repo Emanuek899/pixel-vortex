@@ -3,13 +3,18 @@ from polls.models import Genre
 from django.utils.translation import gettext_lazy as _
 from members.models import CustomUser
 
-
 # Create your models here.
 class Community(models.Model):
     community_id = models.BigAutoField(
         primary_key=True)
     community_grid = models.ImageField(
-        upload_to="community/communities_grids/")
+        upload_to="community/communities_grids/",
+        default="None"
+    )
+    commmunity_hero = models.ImageField(
+        upload_to="community/communities_hero",
+        default="None"
+    )
     community_name = models.CharField(
         max_length=30, null=False, blank=False)
     description = models.CharField(
@@ -27,7 +32,7 @@ class Community(models.Model):
         choices=[("A", "Active"), ("I", "Inactive")],
         max_length=20)
     category = models.ForeignKey(
-        Genre,
+        "polls.Genre",
         related_name="categories",
         on_delete=models.SET_NULL,
         null=True,
@@ -42,11 +47,11 @@ class Community(models.Model):
         return self.community_name
 
 
-class Comment(models.Model):
+class PostComment(models.Model):
     comment_id = models.BigAutoField(primary_key=True)
     user = models.ForeignKey(
         "members.CustomUser",
-        related_name="users_comments",
+        related_name="users_posts_comments",
         on_delete=models.CASCADE)
     text = models.CharField(max_length=100, null=False, blank=False)
     likes_account = models.PositiveIntegerField(default=0)
@@ -59,7 +64,7 @@ class Comment(models.Model):
         return self.user.username if self.user else "No user selected"
 
 
-class Like(models.Model):
+class PostLike(models.Model):
     like_id = models.BigAutoField(primary_key=True)
     user = models.ForeignKey("members.CustomUser", on_delete=models.CASCADE)
     post = models.ForeignKey(
@@ -87,14 +92,11 @@ class Post(models.Model):
         related_name="posts",
         on_delete=models.CASCADE)
     post_title = models.CharField(max_length=20, null=False, blank=False)
-    post_description = models.CharField(
-        max_length=100,
-        null=False,
-        blank=False)
+    post_description = models.CharField(max_length=100, null=False, blank=False)
     post_date = models.DateTimeField(auto_now_add=True)
     likes_count = models.PositiveIntegerField(default=0)
     comments = models.ManyToManyField(
-        Comment,
+        PostComment,
         related_name="comments",
         blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -104,5 +106,7 @@ class Post(models.Model):
         verbose_name_plural = _("Posts")
 
     def __str__(self):
-        return "Post title: [{}], created at: [{}]".format(
-            self.post_title, self.created_at)
+        post_title = self.post_title
+        created_at = self.created_at
+        return "Post title: [{}], created at: [{}]".format(post_title, created_at)
+

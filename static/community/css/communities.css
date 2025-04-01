@@ -148,6 +148,18 @@
     z-index: 1001; /* Mayor que el contenedor para estar por encima */
     display: block !important; /* Forzar visualización */
 }
+.results-list{
+	position: absolute;
+	z-index: 2000;
+}
+.result{
+	background-color: #ffffff;
+	color: #000000;
+	font-size: 20px;
+	font-family: "TROUBLE_FONT";
+	height: 50px;
+	width: 500px;
+	}
 .community-result-item {
     align-items: center;
     background-color: #1e1e1e;
@@ -202,7 +214,7 @@
 	font-size: 20px;
 	flex-grow: 1;
 	padding: 20px;
-	postition: absolute;
+	
 }
 .community-item-name{
 	display: block;
@@ -236,7 +248,7 @@
 }
 .join-btn:hover{
 	background-color: #000000;
-	color: #62ED2E; !important
+	color: #62ED2E !important; 
 }
 
 .filters-list{
@@ -246,4 +258,18 @@
 }
 .filter-category{
 	font-size: 20px;
+}
+#prev-btn{
+	width: 20px;
+	height: 15px;
+	background-color: #62ED2E;
+}
+#next-btn{
+	width: 20px;
+	height: 15px;
+	background-color: #62ED2E;
+}
+#page-identifier{
+	font-size: 20px;
+	color: #62ED2E;
 }

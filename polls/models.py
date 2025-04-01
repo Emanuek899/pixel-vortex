@@ -1,6 +1,5 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-from django.apps import apps
 
 # Create your models here.
 
@@ -28,6 +27,46 @@ class Genre(models.Model):
         return "{}, {}".format(self.genre_id, self.genre)
 
 
+class VideogameComment(models.Model):
+    comment_id = models.BigAutoField(primary_key=True)
+    user = models.ForeignKey(
+        "members.CustomUser",
+        related_name="users_videogame_comments",
+        on_delete=models.CASCADE
+    )
+    comment = models.CharField(
+        max_length=200,
+        null=False,
+        blank=False)
+    community = models.ForeignKey(
+        "community.Community",
+        related_name="community",
+        on_delete=models.CASCADE
+    )
+    
+    class Meta:
+        verbose_name = _("VideogameComment")
+        verbose_name_plural = _("VideogameComments")
+    
+    def __str__(self):
+        return self.comment
+
+
+class VideogameLike(models.Model):
+    like_id = models.BigAutoField(primary_key=True)
+    user = models.ForeignKey(
+        "members.CustomUser",
+        related_name="user_videogame_like",
+        on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name=_("VideogameLike")
+        verbose_name_plural=_("VideogameLikes")
+    
+    def __str__(self):
+        return self.user.username
+
+
 class Videogame(models.Model):
     videogame_id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=30, null=False, unique=True, blank=False)
@@ -40,6 +79,10 @@ class Videogame(models.Model):
         ("PS", "Play station"),
         ("N", "Nintendo")
     ], blank=False, null=False, max_length=20)
+    comments = models.ManyToManyField(
+        VideogameComment,
+        related_name="videogame_comments", blank=True)
+    likes_count = models.PositiveIntegerField(default=0)
 
     class Meta:
         verbose_name = _("Videogame")
@@ -80,3 +123,4 @@ class License(models.Model):
     def __str__(self): 
         product = self.game.name if self.game else "No game selected"
         return "Product: {}, Key: {}".format(product, self.key)
+

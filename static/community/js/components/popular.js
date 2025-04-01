@@ -1,11 +1,8 @@
-const listApp = Vue.createApp({
+const popularApp = Vue.createApp({
     data() {
         return {
-            communities: [],
-            message: '',
-            nextPage: null,
-            prevPage: null,
-            currentPage: 1
+            mostPopular: [],
+            communities: []
         };
     },
     methods: {
@@ -18,29 +15,21 @@ const listApp = Vue.createApp({
             .then(data => {
                 console.log("Datos recibidos:", data);
                 this.communities = data.results;
-                this.nextPage = data.next;
-                this.prevPage = data.previous;
+                this.mostPopular = this.getMostPopular();
             })
             .catch(error => {
                 console.error("Error:", error);
                 this.message = 'Error loading the communities, reload the page';
             });
         },
-        nextPageMethod() {
-            if (this.nextPage) {
-                this.currentPage++;
-                this.communitiesList(this.nextPage);
-            }
-        },
-        prevPageMethod() {
-            if (this.prevPage) {
-                this.currentPage--;
-                this.communitiesList(this.prevPage);
-            }
-        },
         goToCommunity(communityId) {
             window.location.href = `/community/${communityId}/`;
         },
+        getMostPopular(){
+            return this.communities
+            .sort((a, b) => b.users_count - a.users_count)
+            .slice(0, 4);
+        }
     },
     mounted() {
         console.log("Vue montado correctamente en #list");
@@ -49,4 +38,4 @@ const listApp = Vue.createApp({
 });
 
 // Montar la app en el contenedor de la lista
-listApp.mount('#list');
+popularApp.mount('#popular-container');

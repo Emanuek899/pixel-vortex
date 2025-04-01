@@ -12,3 +12,4 @@ urlpatterns = [
     path('<int:community_id>/', views.community, name='community'),
     path("api/v1/", include(router.urls)),  # URL's for the post's api
 ]
+
