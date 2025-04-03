@@ -76,6 +76,13 @@
     margin-top: 10px;
     margin-bottom: 55px;
 }
+.text-footer{
+    color: #adadad;
+    font-family: "TROUBLE_FONT";
+}
+#text-links{
+    color: #62ED2E;
+}
 #form {
     width: 100%;
 }
@@ -85,6 +92,7 @@
     width: 100%;
     border-radius: 20px;
     background-color: rgba(0,0,0,0);
+    color: #ffffff;
 }
 
 .form-control:focus{
@@ -93,6 +101,7 @@
     box-shadow: none;
     background-color: rgba(0,0,0,0);
     color: #ffffff;
+    
 }
 
 .form-control::placeholder{
@@ -124,7 +133,7 @@
     font-size: 14;
     border-radius: 30px;
     border-color: #ffffff;
-    width: 180px;
+    width: 200px;
     height: 40px;
 }
 .social-login {
@@ -139,4 +148,12 @@
     border-radius: 5px;
     font-size: 14px;
     cursor: pointer;
+}
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    text-align: center;
+    padding: 10px;
 }

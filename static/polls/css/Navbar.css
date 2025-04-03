@@ -26,6 +26,8 @@ a {
     padding-right: 5px; /* Cambia el color a tu preferencia */
     height: 95px;
     width: 100%;
+    position: absolute;
+    z-index: 2000;
 }
 .navbar-border {
     height: 1px; /* Grosor de la línea */
@@ -101,13 +103,18 @@ body::after {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%; /* Ajusta para cubrir toda la pantalla */
-    background: linear-gradient(to top, black 0%, black 20%, transparent 100%);  /* Gradiente de negro a transparente */
+    min-height: 100vh; /* Ajusta para cubrir toda la pantalla */
+    background-color: #000000;  /* Gradiente de negro a transparente */
     pointer-events: none; /* Evita que este pseudo-elemento bloquee interacciones como clics */
     z-index: -1;
     margin: 0;
     padding: 0;
   }
+body {
+    background-color: #000000;
+    margin: 0;
+    padding: 0;
+}
 .navbar {
     display: flex;
     align-items: center;
@@ -351,8 +358,15 @@ body::after {
     align-items: center; /* Centra verticalmente */
     justify-content: center; /* Centra horizontalmente */
     text-align: center;
+<<<<<<< HEAD
     z-index: 10;
 }
+=======
+}
+
+/* cosas de la navbar */
+
+>>>>>>> 7257c3f6d54d7368454b68b052ef36940cb8565d
 
 /* Carrusel */
 .carousel-item img {

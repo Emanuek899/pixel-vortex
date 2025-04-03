@@ -1,0 +1,61 @@
+{% extends "master.html" %}
+{% load static %}
+{% block title %}Communities{% endblock title %}
+{% block extra_css %}<link rel="stylesheet" type="text/css" href="{% static 'community/css/communities.css' %}">{% endblock extra_css%}
+
+{% block content %}
+{% verbatim %}
+<div id="main-container">
+	<h1 class="title">most popular communities</h1>
+	<div id="popular-container">
+		<div class="popular-content" v-for="community in mostPopular" :key="community.id">
+				<img class="popular-img" :src="community.commmunity_hero">
+				<div class="popular-info">
+					<span class="popular-info-title">{{ community.community_name }}</span>
+					<span class="popular-info-subtitle">welcome</span>
+					<span class="popular-info-desc">{{ community.description}}</span>
+					<a @click="goToCommunity(community.community_id)" class="info-btn">see more</a>
+			</div>
+		</div> 
+	</div>
+	<hr class="line">
+	<h2 class="title">explore the community</h2>
+	<div class="communities-container">
+		<div class="communities-list">
+			<div class="searchbar" id="search-bar-app">
+				<input 
+					v-model="searchQuery" 
+					@input="filterResults" 
+					type="text"
+					placeholder="Search..." 
+					class="search-bar">
+				<ul v-if="filteredResults.length" class="results-list">
+					<li v-for="(result, index) in filteredResults" :key="index" class="result">
+						<a @click="goToCommunity(result.community_id)">{{ result.community_name }}</a>
+					</li>
+				</ul>
+				<p v-else>No results found</p>
+			</div>
+			<div class="list" id="list">
+    			<div v-for="community in communities" :key="community.id" class="community-item">
+        			<div class="community-item-img"><img :src="community.community_grid"></div>
+					<div class="community-item-info">
+						<span class="community-item-name">{{ community.community_name }}</span>
+						<span class="community-item-desc">{{ community.description }}</span>
+						<a @click="goToCommunity(community.community_id)" class="join-btn">join</a> 
+					</div>
+    			</div>
+    			<div class="pagination">
+        			<button @click="prevPageMethod" :disabled="!prevPage" id="prev-btn">Anterior</button>
+        			<span id="page-identifier">Página {{ currentPage }}</span>
+        			<button @click="nextPageMethod" :disabled="!nextPage" id="next-btn">Siguiente</button>
+    			</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endverbatim  %}
+<script src="{% static 'community/js/components/searchbar.js' %}"></script>
+<script src="{% static 'community/js/components/community_list.js' %}"></script>
+<script src="{% static 'community/js/components/popular.js' %}"></script>
+{% endblock content %}
