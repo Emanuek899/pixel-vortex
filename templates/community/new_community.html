@@ -1,0 +1,45 @@
+{% extends 'master.html' %}
+{% load static %}
+{% block title %}New Community{% endblock title %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'community/css/new_community.css' %}">{% endblock extra_css%}
+
+{% block content %}
+    <div id="main-container">
+        <h1 class="title">New community</h1>
+        <div id="form">
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div>
+                    <label for="grid" class="labels">select a grid image</label>
+                    <input type="file", name="grid" class="image-input" required>
+                </div><br>
+                <div>
+                    <label for="hero" class="labels">select a hero image</label>
+                    <input type="file", name="hero" class="image-input" required>
+                </div><br>
+                <div>
+                    <label for="name" class="labels">Community name</label>
+                    <input autocomplete="off" type="text", name="name" class="text-input", placeholder="community name" required>
+                </div><br>
+                <div>
+                    <label for="description" class="labels">community description</label>
+                    <input type="text", name="description" class="text-input">
+                </div><br>
+                <div>
+                    <label for="status" class="labels">status</label>
+                    <input type="radio", name="status" value="A">
+                    <input type="radio", name="status" value="I">
+                </div><br>
+                <div>
+                    <label for="category" class="labels">Selecciona una categoria:</label>
+                    <select name="category" id="category">
+                        {% for category in categories %}
+                            <option value="{{ category.genre_id }}">{{ category.genre }}</option>
+                        {% endfor %}
+                    </select>
+                </div><br>
+                <button id="btn" type="submit" class="btn btn-primary">Create</button>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

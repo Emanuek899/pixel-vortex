@@ -1,0 +1,29 @@
+@font-face{
+    font-family: "trouble";
+    src: url(/static/community/fonts/TROUBLE_FONT.TTF) format("truetype");
+}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+#main-container{
+    margin-top: calc(100vh - (100vh - 95px));
+    padding: 60px;
+}
+.title{
+    font-family: "trouble";
+    color: #ffffff;
+    font-size: 50px;
+}
+.labels{
+    font-family: "roboto";
+    font-size: 20px;
+    color: #ffffff;
+    letter-spacing: .5px;
+    margin-right: 10px;
+}
+.image-input{
+    width: auto;
+    height: 30px;
+    font-size: 15px;
+    font-family: "roboto";
+    color: #ffffff;
+}

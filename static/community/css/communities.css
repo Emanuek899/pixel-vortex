@@ -23,7 +23,6 @@
 
 #popular-container{
 	box-sizing: border-box;
-	background-color: darkred;
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	grid-template-rows: auto;
@@ -251,7 +250,7 @@
 	color: #62ED2E !important; 
 }
 
-.filters-list{
+#filters-list{
 	height: 100%;
 	width: calc(100% - (100% - 265px));
 	background-color: purple;
@@ -260,13 +259,13 @@
 	font-size: 20px;
 }
 #prev-btn{
-	width: 20px;
-	height: 15px;
+	width: 100px;
+	height: 30px;
 	background-color: #62ED2E;
 }
 #next-btn{
-	width: 20px;
-	height: 15px;
+	width: 100px;
+	height: 30px;
 	background-color: #62ED2E;
 }
 #page-identifier{

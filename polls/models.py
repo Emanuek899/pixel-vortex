@@ -17,7 +17,7 @@ class Classification(models.Model):
 
 class Genre(models.Model):
     genre_id = models.AutoField(primary_key=True)
-    genre = models.CharField(max_length=50, null=False, blank=False) 
+    genre = models.CharField(max_length=50, null=False, blank=False, unique=True) 
     
     class Meta:
         verbose_name = _("Genre")
@@ -38,11 +38,6 @@ class VideogameComment(models.Model):
         max_length=200,
         null=False,
         blank=False)
-    community = models.ForeignKey(
-        "community.Community",
-        related_name="community",
-        on_delete=models.CASCADE
-    )
     
     class Meta:
         verbose_name = _("VideogameComment")

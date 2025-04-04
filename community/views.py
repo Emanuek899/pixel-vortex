@@ -5,8 +5,9 @@ such show communities, join communities etc...
 from . import models
 from rest_framework import viewsets, filters
 from . import serializers
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from rest_framework.pagination import PageNumberPagination
+from polls.models import Genre
 
 
 # Create your views here.
@@ -62,3 +63,32 @@ def community(request, community_id):
         'community_id': community_id
     }
     return render(request, 'community/community.html', context)
+
+def createCommunity(request):
+    """
+    Create a new community only if the user is logged
+    """
+    if request.method == "POST":
+        grid = request.FILES.get("grid")
+        hero = request.FILES.get("hero")
+        name = request.POST.get("name")
+        description = request.POST.get("description")
+        status = request.POST.get("status")
+        category = request.POST.get("category")
+        
+        community = models.Community.objects.create(
+            community_grid=grid,
+            commmunity_hero=hero,
+            community_name=name,
+            description=description,
+            status=status,
+            category=Genre.objects.get(genre_id=category)
+        )
+        community.save()
+        context = {
+            "community_id": community.community_id
+        }
+        return redirect("community", context["community_id"])
+    categories = Genre.objects.all()
+    return render(request, "community/new_community.html", {"categories":categories})
+

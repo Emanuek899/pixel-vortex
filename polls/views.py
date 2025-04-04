@@ -6,3 +6,4 @@ def index(request):
 
 def catalogue(request):
     return render(request, "polls/catalogue.html")
+
