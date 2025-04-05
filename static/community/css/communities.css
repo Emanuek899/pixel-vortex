@@ -4,13 +4,14 @@
 	font-family: "TROUBLE_FONT";
 	src: url(/static/community/fonts/TROUBLE_FONT.TTF) format("truetype");
 }
+
 .title {
 	color: #ffffff;
 	font-size: 80px;
 	font-family: "TROUBLE_FONT";
 	margin: 0px;
 }
-
+ 
 #main-container {
 	box-sizing: border-box;
 	display: flex;
@@ -31,21 +32,25 @@
 	margin-top: 50px;
 	width: 100%;
 }
+
 .popular-content{
 	height: 300px;
 	position: relative;
 	overflow: hidden;
 	width: 100%;
 }
+
 .popular-content:hover .popular-info{
 	opacity: 1;
 }
+
 .popular-img{
 	height: 100%;
 	object-fit: cover;
 	object-position: right;
 	width: 100%;
 }
+
 .popular-info{
 	bottom: 0;
 	background-color: rgba(0, 0, 0, 0.9);
@@ -58,12 +63,14 @@
 	text-align: left;
 	width: 100%;
 }
+
 .popular-info-title{
 	color: #ffffff;
 	display: block;
 	font-family: "TROUBLE_FONT";
 	font-size: 50px;
 }
+
 .popular-info-subtitle{
 	color: #ffffff;
 	display: block;
@@ -72,6 +79,7 @@
 	font-weight: 900;
 	width: 50%;
 }
+
 .popular-info-desc{
 	color: #ffffff;
 	display: block;
@@ -82,6 +90,7 @@
 	width: 70%;
 
 }
+
 .info-btn{
 	color: #000000;
 	background-color: #62ED2E;
@@ -97,10 +106,12 @@
 	width: 120px;
 	transition: color 0.3s ease;
 }
+
 .info-btn:hover{
 	color: #62ED2E;
 	background-color: rgba(0,0,0,0);
 }
+
 .line {
 	border: 1px solid;
 	border-color: #62ED2E;
@@ -108,6 +119,7 @@
 	margin-top: 50px;
 	margin-bottom: 80px;
 }
+
 .communities-container{
 	display: flex;
 	flex-direction: row;
@@ -115,10 +127,12 @@
 	margin-top: 50px;
 	width: 100%;
 }
+
 .communities-list{
 	height: 100%;
 	width: calc(100% - 235px);
 }
+
 /*search bar styles*/
 .search-bar-container {
     position: relative;
@@ -126,6 +140,7 @@
     width: 100%;
     z-index: 1000; /* Asegurar que está por encima de otros elementos */
 }
+
 .search-bar {
     background-color: #1e1e1e;
     border: 1px solid #62ED2E;

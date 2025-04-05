@@ -8,6 +8,9 @@
     margin-top: calc(100vh - (100vh - 95px));
     padding: 60px;
 }
+#form{
+    padding: 30px;
+}
 .title{
     font-family: "trouble";
     color: #ffffff;
@@ -18,7 +21,7 @@
     font-size: 20px;
     color: #ffffff;
     letter-spacing: .5px;
-    margin-right: 10px;
+    margin-bottom: 10px;
 }
 .image-input{
     width: auto;
@@ -26,4 +29,23 @@
     font-size: 15px;
     font-family: "roboto";
     color: #ffffff;
+}
+.text-input{
+    height: 30px;
+    width: 300px;
+    font-size: 20px;
+    border-radius: 20px;
+    background-color: black;
+    color: #ffffff;
+    border-color: #62ED2E;
+    padding: 10px;
+}
+.text-input::placeholder{
+    color: darkgrey;
+    font-size: 15px;
+}
+.selection-input{
+    height: auto;
+    font-size: 20px;
+    width: auto;
 }

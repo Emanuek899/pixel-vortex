@@ -8,6 +8,7 @@ from . import serializers
 from django.shortcuts import render, redirect
 from rest_framework.pagination import PageNumberPagination
 from polls.models import Genre
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
@@ -64,6 +65,7 @@ def community(request, community_id):
     }
     return render(request, 'community/community.html', context)
 
+@login_required
 def createCommunity(request):
     """
     Create a new community only if the user is logged

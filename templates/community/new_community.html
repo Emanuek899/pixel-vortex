@@ -10,29 +10,31 @@
             <form method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div>
-                    <label for="grid" class="labels">select a grid image</label>
-                    <input type="file", name="grid" class="image-input" required>
+                    <label for="grid" class="labels">Select a grid image</label>
+                    <input type="file" name="grid" class="image-input" required>
                 </div><br>
                 <div>
-                    <label for="hero" class="labels">select a hero image</label>
-                    <input type="file", name="hero" class="image-input" required>
+                    <label for="hero" class="labels">Select a hero image</label>
+                    <input type="file" name="hero" class="image-input" required>
                 </div><br>
                 <div>
-                    <label for="name" class="labels">Community name</label>
-                    <input autocomplete="off" type="text", name="name" class="text-input", placeholder="community name" required>
+                    <label for="name" class="labels">Community name</label><br>
+                    <input autocomplete="off" type="text" name="name" class="text-input" placeholder="name" required>
                 </div><br>
                 <div>
-                    <label for="description" class="labels">community description</label>
-                    <input type="text", name="description" class="text-input">
+                    <label for="description" class="labels">Community description</label><br>
+                    <input type="text" name="description" class="text-input"placeholder="description">
                 </div><br>
                 <div>
-                    <label for="status" class="labels">status</label>
-                    <input type="radio", name="status" value="A">
-                    <input type="radio", name="status" value="I">
+                    <label for="status" class="labels">Status:</label><br>
+                    <label for="status" class="labels">Active</label>
+                    <input type="radio" name="status" value="A"><br>
+                    <label for="status" class="labels">Inactive</label>
+                    <input type="radio" name="status" value="I">
                 </div><br>
                 <div>
-                    <label for="category" class="labels">Selecciona una categoria:</label>
-                    <select name="category" id="category">
+                    <label for="category" class="labels">Selecciona una categoria:</label><br>
+                    <select name="category" id="category" class="selection-input">
                         {% for category in categories %}
                             <option value="{{ category.genre_id }}">{{ category.genre }}</option>
                         {% endfor %}
@@ -43,3 +45,4 @@
         </div>
     </div>
 {% endblock content %}
+
