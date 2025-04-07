@@ -7,5 +7,4 @@ env/
 venv/
 ENV/
 staticfiles/
-media/
 node_modules/
